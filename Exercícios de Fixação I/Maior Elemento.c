@@ -11,12 +11,10 @@ int main()
         else
             printf("%d é maior", c);
     else
-    {
         if(b>c)
             printf("%d é maior", b);
         else
             printf("%d é maior", c);
-    }
 
     return 0;
 }
