@@ -5,7 +5,7 @@ int main()
     int idade, ano_cont, dependentes, ano_atual, ano_casa;
     printf("Digite o salario base:\n");
     scanf("%f", &sal_base);
-    printf("Digite a idade, o ano de contratacao, a idade do casamento, o numero de dependentes e o ano atual:\n");
+    printf("Digite a idade, o ano de contratacao, a quanto tempo esta na empresa, o numero de dependentes e o ano atual:\n");
     scanf("%d%d%d%d%d", &idade, &ano_cont, &ano_casa, &dependentes, &ano_atual);
 
     if (idade > 25)
