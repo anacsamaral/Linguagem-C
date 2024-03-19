@@ -7,7 +7,7 @@ int main()
     if(a + b > c && c + b > a && a + c > b)
     {
         if(a == b && a == c)
-        printf("Ttriângulo Equilátero!\n");
+        printf("Triângulo Equilátero!\n");
         else
         {
             if(a == b || a == c || b == c)
