@@ -13,5 +13,4 @@ int main()
         printf("Reprovado");
     
     return 0;
-
 }
