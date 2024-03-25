@@ -8,7 +8,7 @@ int main(){
         min = seg / 60;
         seg = seg % 60;
 
-    printf("%d:%d:%d", hora, min, seg);
+    printf("%d:%d:%d\n", hora, min, seg);
 
     return 0;
 }
