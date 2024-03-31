@@ -17,9 +17,9 @@ int main()
     else
     {
         minutos = min_inicial - min_final;
-        horas = (hora_final - hora_inicial) * 60;
-        minutos = horas - minutos;
-        printf("O JOGO DUROU 0 HORA(S) E %d MINUTO(S)\n", horas, minutos);
+        horas = hora_final - hora_inicial;
+        minutos = horas * 60 - minutos;
+        printf("O JOGO DUROU %d HORA(S) E %d MINUTO(S)\n", horas, minutos);
     }
 
     return 0; 
