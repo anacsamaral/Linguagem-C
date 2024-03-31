@@ -1,30 +1,25 @@
 #include <stdio.h>
 int main()
 {
-    float salario, imposto, isento, diferenca;
+    float salario, imposto = 0;
     scanf("%f", &salario);
 
-    if (salario >= 0.00 && salario <= 2000.00)
-        printf("Isento");
-
-    else if (salario >= 2000.01 && salario <= 3000.00)
+    if (salario > 4500.00)
     {
-        diferenca = salario - 2000.00;
-        isento = salario - diferenca;
-        impostoA = 
+        imposto += (salario - 4500.00) * 0.28;
+        salario -= (salario - 4500.00);
+    }
+    if (salario > 3000.00) 
+    {
+        imposto += (salario - 3000.00) * 0.18;
+        salario -= (salario - 3000.00);
+    }
+    if (salario > 2000.00 )
+        imposto += (salario - 2000.00) * 0.08;
     
-    }
-    else if (salario >= 3000.01 && salario <= 4500.00)
-    {
-        salario = salario - 2000.00;
-        printf("R$ %.2f", imposto);
-    }
+    if (imposto == 0.00)
+        printf("Isento\n");
     else
-    {
-        salario = salario - 2000.00;
-        imposto = salario * 0.28;
-        printf("R$ %.2f", imposto);
-    }
-
+        printf("R$ %.2f\n", imposto);
     return 0;
 }
