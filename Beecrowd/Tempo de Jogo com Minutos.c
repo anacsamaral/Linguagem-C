@@ -1,26 +1,22 @@
 #include <stdio.h>
-int main()
-{
+
+int main() {
     int hora_inicial, min_inicial, hora_final, min_final, horas, minutos;
     scanf("%d %d %d %d", &hora_inicial, &min_inicial, &hora_final, &min_final);
 
-    if (hora_inicial < hora_final && min_inicial < min_final)
-    {
-        horas = hora_final - hora_inicial;
-        minutos = min_final - min_inicial;
-        printf("O JOGO DUROU %d HORA(S) E %d MINUTO(S)\n", horas, minutos);
-    }
+    // Calcula o tempo decorrido em minutos
+    minutos = (hora_final * 60 + min_final) - (hora_inicial * 60 + min_inicial);
 
-    else if (hora_inicial == hora_final && min_inicial == min_final)
-        printf("O JOGO DUROU 24 HORA(S) E 0 MINUTO(S)\n");
-    
-    else
-    {
-        minutos = min_inicial - min_final;
-        horas = hora_final - hora_inicial;
-        minutos = horas * 60 - minutos;
-        printf("O JOGO DUROU %d HORA(S) E %d MINUTO(S)\n", horas, minutos);
-    }
+    // Se o tempo for negativo, significa que passou da meia-noite
+    if (minutos <= 0)
+        minutos += 24 * 60;
 
-    return 0; 
+    // Calcula as horas e minutos a partir dos minutos totais
+    horas = minutos / 60;
+    minutos = minutos % 60;
+
+    // Exibe o tempo decorrido
+    printf("O JOGO DUROU %d HORA(S) E %d MINUTO(S)\n", horas, minutos);
+
+    return 0;
 }
