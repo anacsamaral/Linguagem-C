@@ -1,14 +1,13 @@
 #include <stdio.h>
 int main()
 {
-    int num_teste = 0, cont = 0, quantCobaias = 0, quantC = 0, quantR = 0, quantS = 0, totCobaias = 0;
+    int num_teste = 0, quantCobaias = 0, quantC = 0, quantR = 0, quantS = 0, totCobaias = 0;
     float percentC, percentR, percentS;
     char especie;
     scanf("%d", &num_teste);
-    while (cont < num_teste)
+    while (num_teste--)
     {
         scanf("%d %c", &quantCobaias, &especie);
-        cont++;
 
         if (quantCobaias > 0)
         {
@@ -29,9 +28,9 @@ int main()
     printf("Total de coelhos: %d\n", quantC);
     printf("Total de ratos: %d\n", quantR);
     printf("Total de sapos: %d\n", quantS);
-    printf("Percentual de coelhos: %.2f%%\n", percentC);
-    printf("Percentual de ratos: %.2f%%\n", percentR);
-    printf("Percentual de sapos: %.2f%%\n", percentS);
+    printf("Percentual de coelhos: %.2f %%\n", percentC);
+    printf("Percentual de ratos: %.2f %%\n", percentR);
+    printf("Percentual de sapos: %.2f %%\n", percentS);
     
     return 0;
         
