@@ -5,20 +5,25 @@ int main()
     float percentC, percentR, percentS;
     char especie;
     scanf("%d", &num_teste);
-    while (num_teste--)
-    {
-        scanf("%d %c", &quantCobaias, &especie);
 
-        if (quantCobaias > 0)
+    if (num_teste >= 1 && num_teste <= 15)
+    {
+        while (num_teste--)
         {
-            if (especie == 'C')
-                quantC += quantCobaias;
-            if (especie == 'R')
-                quantR += quantCobaias;
-            if (especie == 'S')
-                quantS += quantCobaias;
+            scanf("%d %c", &quantCobaias, &especie);
+
+            if (quantCobaias > 0)
+            {
+                if (especie == 'C')
+                    quantC += quantCobaias;
+                if (especie == 'R')
+                    quantR += quantCobaias;
+                if (especie == 'S')
+                    quantS += quantCobaias;
+            }
         }
     }
+
     totCobaias = quantC + quantR + quantS;
     percentC = (float) quantC/totCobaias * 100;
     percentR = (float) quantR/totCobaias * 100;
@@ -33,5 +38,4 @@ int main()
     printf("Percentual de sapos: %.2f %%\n", percentS);
     
     return 0;
-        
 }
