@@ -7,7 +7,7 @@ int main()
     scanf("%d", &numNF);
     while (numNF > 0)
     {
-        cont = 0; totVC = 0;
+        cont = 0; totVC = 0; valor_notaMV = 0;
         printf("Código do produto:\n");
         scanf("%d", &cod);
         while(cod > 0)
@@ -74,7 +74,7 @@ int main()
     printf("Total de todas as vendas:R$%.2f\n", totTV);
     printf("O produto %d foi o menos vendido\n", prodMQV);
     printf("O produto %d foi o mais caro de todas as notas\n", codPM);
-    printf("A nota %d foi a que teve menor venda\n", notaMV);
+    printf("A nota %d foi a que teve menor venda, com um total de R$%.2f\n", notaMV, valor_notaMV);
 
     return 0;
 }
