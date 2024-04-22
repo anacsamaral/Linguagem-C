@@ -1,80 +1,112 @@
 #include <stdio.h>
 int main()
 {
-    int numNF, cod, quant, codM, menorQT, maiorQV = 0, prodMQV, codME, prodMP, codPM, codA = 0, cont, notaMV;
-    float totTV = 0, totVC, precoU, menorPC, total, valor_notaMV;
-    printf("Nota fiscal:\n");
-    scanf("%d", &numNF);
-    while (numNF > 0)
+    int nf, cod, quant, maior_qt, cod_ma_q;
+    float precoU, total, total_nf, total_vendas;
+    total_vendas = 0; //item B
+    printf("Nota fiscal: ");
+    scanf("%d", &nf);
+    while (nf > 0)
     {
-        cont = 0; totVC = 0; valor_notaMV = 0;
-        printf("Código do produto:\n");
+        total_nf = 0;
+        maior_qt = 0;
+        printf("Cod. do produto: ");
         scanf("%d", &cod);
-        while(cod > 0)
+        while (cod > 0)
         {
-            printf("Quantidade:\n");
+            printf("Quantidade: ");
             scanf("%d", &quant);
-            printf("Preço unitário:\n");
+            printf("Preco unitario: ");
             scanf("%f", &precoU);
-            total = quant * precoU;
-            totVC += total;
-            
-            if (quant > maiorQV)
+            total = quant * precoU;     
+            printf("Total: %.2f\n", total);
+            total_nf += total;  //item A    
+            if (quant > maior_qt)
             {
-                maiorQV = quant;
-                codM = cod;
+                maior_qt = quant;
+                cod_ma_q = cod;
             }
-            cont++;
-            if (cont == 1)
-            {
-                menorQT = quant;
-                prodMP = precoU;
-                menorPC = precoU;
-                prodMQV = quant;
-                codME = cod;
-            }
-            else
-            {
-                if (quant < menorQT)
-                    menorQT = quant;
-                if (precoU < menorPC)
-                    menorPC = precoU;
-                if (quant < prodMQV)
-                    codME = cod;
-                if (precoU > prodMP)
-                {
-                    prodMP = precoU;
-                    codPM = cod;
-                }
-            }
-            printf("Código do produto:\n");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            printf("Cod. do produto: ");
             scanf("%d", &cod);
         }
-        printf("Total de vendas da nota: %.2f\n", totVC);
-        printf("O produto %d foi o mais vendido\n", codM);
-        printf("O produto %d teve o menor preço\n", codME);
-        codA++; 
-        totTV += totVC;
-        if (codA == 1)
-        {   
-            valor_notaMV = totVC;
-            notaMV = numNF;
-        }
-        else
-        {
-            if (totVC < notaMV)
-            {
-                valor_notaMV = totVC;
-                notaMV = numNF;
-            }
-        }
-        printf("Nota fiscal:\n");
-        scanf("%d", &numNF);
-    }
-    printf("Total de todas as vendas:R$%.2f\n", totTV);
-    printf("O produto %d foi o menos vendido\n", prodMQV);
-    printf("O produto %d foi o mais caro de todas as notas\n", codPM);
-    printf("A nota %d foi a que teve menor venda, com um total de R$%.2f\n", notaMV, valor_notaMV);
+        printf("Total Nota: %.2f\n", total_nf); //item A
+        total_vendas += total_nf; //item B
+        printf("O prod. com maior quant. vendida eh %d\n", cod_ma_q);
 
-    return 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        printf("Nota fiscal: ");
+        scanf("%d", &nf);
+    }
+    printf("Total de todas as vendas: %.2f\n", total_vendas); //item B
 }
