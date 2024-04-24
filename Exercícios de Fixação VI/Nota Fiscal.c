@@ -9,9 +9,10 @@ int main()
     while (nf > 0)
     {
         contNF++;
-        total_nf = 0, maior_qt = 0, cont = 0;
+        total_nf = 0, maior_qt = 0;
         printf("Cod. do produto: ");
         scanf("%d", &cod);
+        cont = 0;
         while (cod > 0)
         {
             cont++;
@@ -31,8 +32,16 @@ int main()
             }
             else
             {
-                menor_preco = precoU;
-                cod_menor_p = cod;
+                if(precoU <  menor_preco)
+                {
+                    menor_preco = precoU;
+                    cod_menor_p = cod;
+                }
+                if (quant < menor_qt)
+                {
+                    menor_qt = quant;
+                    cod_me_q = cod;
+                }
             }
             if (quant > maior_qt)
             {
@@ -55,18 +64,21 @@ int main()
             menor_totnf = total_nf;
             notaMT = nf;
         }
-        if (total_nf < menor_totnf)
+        else
         {
-            menor_totnf = total_nf;
-            notaMT = nf;
+            if (total_nf < menor_totnf)
+            {
+                menor_totnf = total_nf;
+                notaMT = nf;
+            }
         }
         printf("O prod. c/ o menor preço da nota foi o %d\n", cod_menor_p);
-        printf("\nNota fiscal: ");
+        printf("Nota fiscal:\n");
         scanf("%d", &nf);
     }
     printf("Total de todas as vendas: %.2f\n", total_vendas); // item B
     printf("O prod. c/ a menor qtd. de vendas foi o %d\n", cod_me_q);
-    printf("O prod. c/ o maior preço de das notas foi o %d\n", cod_ma_p);
+    printf("O prod. c/ o maior preço das notas foi o %d\n", cod_ma_p);
     printf("A nota fiscal que obteve a menor venda foi a %d\n", notaMT);
 
     return 0;
