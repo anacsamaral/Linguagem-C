@@ -1,21 +1,20 @@
 #include <stdio.h>
 int main()
 {
-    int nf, cod, quant, maior_qt, cod_ma_q, cod_ma_p, cont, cod_me_q, cod_menor_p, notaMT, menor_qt, contNF;
+    int nf, cod, quant, maior_qt, cod_ma_q, cod_ma_p, cont, cod_me_q, cod_menor_p, notaMT, menor_qt, contNF, contP;
     float precoU, total, total_nf, total_vendas, menor_preco, maior_preco, menor_totnf;
-    total_vendas = 0, maior_preco = 0, contNF = 0; // item B
+    total_vendas = 0, maior_preco = 0, menor_qt = 0, contNF = 0,cont = 0; // item B
     printf("Nota fiscal: ");
     scanf("%d", &nf);
     while (nf > 0)
     {
         contNF++;
-        total_nf = 0, maior_qt = 0;
+        total_nf = 0, maior_qt = 0, menor_preco = 0, contP = 0;
         printf("Cod. do produto: ");
         scanf("%d", &cod);
-        cont = 0;
         while (cod > 0)
         {
-            cont++;
+            cont++; contP++;
             printf("Quantidade: ");
             scanf("%d", &quant);
             printf("Preco unitario: ");
@@ -27,6 +26,9 @@ int main()
             {
                 menor_qt = quant;
                 cod_me_q = cod;
+            }
+            if (contP == 1)
+            {
                 menor_preco = precoU;
                 cod_menor_p = cod;
             }
@@ -73,7 +75,7 @@ int main()
             }
         }
         printf("O prod. c/ o menor preço da nota foi o %d\n", cod_menor_p);
-        printf("Nota fiscal:\n");
+        printf("Nota fiscal: ");
         scanf("%d", &nf);
     }
     printf("Total de todas as vendas: %.2f\n", total_vendas); // item B
