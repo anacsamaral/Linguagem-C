@@ -1,21 +1,17 @@
 #include <stdio.h>
 int main()
 {
-    int idade, maior18 = 0, cont = 0;
+    int idade, maior18 = 0, cont = 0, cont18 = 0;
     printf("Digite a idade:\n");
     scanf("%d", &idade);
-    cont++;
-    while (cont <= 9)
+    while (cont <= 10)
     {
+        cont++;
         if(idade >= 18)
-            {maior18++;
-            printf("Digite a idade:\n");
-            scanf("%d", &idade);
-            cont++;}
-        else
-            {printf("Digite a idade:\n");
-            scanf("%d", &idade);
-            cont++;}
+            cont18++;
+        
+        printf("Digite a idade:\n");
+        scanf("%d", &idade);
     }
     printf("%d pessoas são maiores de 18 anos.\n", maior18);
     
