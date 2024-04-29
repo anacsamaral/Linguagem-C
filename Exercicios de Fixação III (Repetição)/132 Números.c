@@ -3,7 +3,8 @@
 int main() {
     int num, par = 0, impar = 0, cont = 0;
     
-    while (cont < 132) {
+    while (cont < 132)
+    {
         scanf("%d", &num);
         
         if (num % 2 == 0)
