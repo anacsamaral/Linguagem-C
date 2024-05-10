@@ -19,6 +19,6 @@ int main()
         scanf(" %d", &num);
     }
     media = (float) soma/contP;
-    printf("A media dos numeros pares é: %.1f \n", media);
+    printf("A media dos numeros pares é: %.1f\n", media);
     return 0;
 }
