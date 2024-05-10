@@ -28,7 +28,7 @@ int main()
         soma += notaF;
         if (notaF < 6.0 || freq < 40)
             rep++;
-        else
+        if (notaF >= 6.0 && freq < 40)
             repF++;
         contA++;
         printf("Digite a matricula do %do. aluno:\n", contA + 1);
@@ -36,7 +36,7 @@ int main()
     }
     media = (float)soma / contA;
     printf("Maior nota: %.1f\nMenor nota: %.1f\n", maior, menor);
-    printf("Media da turma: %.1f", media);
+    printf("Media da turma: %.1f\n", media);
     printf("Total de alunos reprovados: %d\n", rep);
     porc = (float)repF / contA * 100;
     printf("%.2f dos alunos da turma reprovaram por falta\n", porc);
