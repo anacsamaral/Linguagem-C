@@ -1,19 +1,24 @@
 #include <stdio.h>
+
 int main()
 {
-    int i, j, num, soma;
-    for (i = 0; i <= 100; i++)
+    int num, i, soma;
+    while (1)  // loop infinito
     {
-        printf("Digite o numero:\n");
-        scanf("%d", &num);
         soma = 0;
-        for (j = 1; num != soma; j++)
-        {
-            if (num % j == 0)
-                soma += j;
-        }
+        printf("Digite o numero (digite um numero negativo para sair):\n");
+        scanf("%d", &num);
+
+        if (num <= 0) // termina a condição
+            break;
+    
+        for (i = 1; i <= num / 2; i++) { // Verifica se há divisores até num/2
+            if (num % i == 0)
+                soma += i;
         if (soma == num)
             printf("Numero perfeito\n");
+        else
+            printf("Numero nao perfeito\n");
     }
     return 0;
 }
