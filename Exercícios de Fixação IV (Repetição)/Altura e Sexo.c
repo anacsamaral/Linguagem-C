@@ -13,9 +13,7 @@ int main()
         scanf("%c", &sexo);
         // Maior e menor altura
         if (cont == 0)
-        {
             menorA = maiorA = altura;
-        }
         else
         {
             if (altura > maiorA)
