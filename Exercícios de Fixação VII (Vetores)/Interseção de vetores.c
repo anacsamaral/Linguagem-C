@@ -29,7 +29,7 @@ int main()
         }
 
     }
-    for (i=0; i<TF; i++)
+    for (i = 0; i < TF; i++)
     {
         //Verificando se o valor vet2[i] está no nUniao
         pos = 0;
@@ -43,7 +43,7 @@ int main()
         }
     }
     //Exibindo o vUniao, que é a união dos vetores vet1 e vet2
-    for (i=0;i<TLU;i++)
+    for (i = 0; i < TLU; i++)
         printf("%d, ",vUniao[i]);
     //Interseção
     //Verificando se o valor no vet1 está no vet2
@@ -66,7 +66,7 @@ int main()
         }
     }
     printf("\n");
-    for (i=0;i<TLI;i++)
+    for (i = 0;i < TLI; i++)
         printf("%d, ",vIntersec[i]);
 
     return 0;
