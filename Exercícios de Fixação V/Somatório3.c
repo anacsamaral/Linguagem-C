@@ -2,7 +2,7 @@
 #include <math.h>
 int main()
 {
-    int d, n, expo = 0;
+    int d, n, expo;
     long long int potencia, soma = 0;
     printf("Valor de X:\n");
     scanf("%d", &n);
@@ -16,7 +16,7 @@ int main()
             expo++;
             potencia = pow(n, expo);
             soma += potencia / d;
-            
+
             if (expo == 1)
                 printf("S = %lld/%d + ", potencia, d);
             else if (expo == 50)
@@ -29,5 +29,6 @@ int main()
         printf("Valor de X:\n");
         scanf("%d", &n);
     }
+    printf("Fim do programa.\n");
     return 0;
 }
