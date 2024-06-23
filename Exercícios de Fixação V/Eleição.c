@@ -1,8 +1,8 @@
 #include <stdio.h>
 int main()
 {
-    int voto, cont = 0, c1 = 0, c2 = 0, c3 = 0;
-    printf("Vote:\n1 - Chapa 1\n2 - Chapa 2\n3 - Chapa 3\n");
+    int voto, cont = 0, c1 = 0, c2 = 0, c3 = 0, c4 = 0, nulo = 0;
+    printf("Vote:\n1 - Chapa 1\n2 - Chapa 2\n3 - Chapa 3\n4 - Voto em Branco\n");
     scanf("%d", &voto);
     while (cont < 200)
     {
@@ -11,9 +11,12 @@ int main()
             c1++;
         else if (voto == 2)
             c2++;
-        else
+        else if (voto == 3)
             c3++;
-        
+        else if (voto == 4)
+            c4++;
+        else
+            nulo++;
         printf("1 - Chapa 1\n2 - Chapa 2\n3 - Chapa 3\n");
         scanf("%d", &voto);
     }
