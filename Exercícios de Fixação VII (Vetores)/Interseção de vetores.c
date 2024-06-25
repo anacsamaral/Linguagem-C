@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define TF 5
+#define TF 10
 int main()
 {
     int vet1[TF], vet2[TF], vUniao[TF*2], TLU = 0, TLI = 0, vIntersec[TF], i, pos;
