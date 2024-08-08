@@ -2,22 +2,30 @@
 #define tf 4
 int main()
 {
-    int vet1[tf], vet2[tf], i;
+    int vet1[tf], vet2[tf], i, j, temp;
+
+    //leitura do vetor
     for (i = 0; i < tf; i++)
     {
         printf("Dig o %do. num do vetor:\n", i + 1);
         scanf("%d", &vet1[i]);
     }
-    for (i = 0; i < tf; i++)
+
+    //ordenação do vetor
+    for (i = 0; i < 4 - 1; i++) 
     {
-        if (vet1[i] < 0)
-            vet2[i] = vet1[i];
+        for (j = 0; j < 4 - i - 1; j++) 
+        {
+            if (vet1[j] > vet1[j + 1]) 
+            {
+                // Troca de elementos
+                temp = vet1[j];
+                vet2[j] = vet1[j + 1];
+                vet2[j + 1] = temp;
+            }
     }
-    for (i = 0; i < tf; i++)
-    {
-        if (vet1[i] >= 0)
-            vet2[i] = vet1[i];
-    }
+
+    //exibição do vet1 e vet2
     for (i = 0; i < tf; i++)
         printf("%d ", vet1[i]);
     printf("\n");
