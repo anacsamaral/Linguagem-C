@@ -3,7 +3,7 @@
 int main()
 {
     int vet[tf], tl = 0, num, pos, i, elem;
-    printf("Digite o %do. numero:\n", tl+1);
+    printf("Digite o %do. numero: (0 para finalizar)\n", tl+1);
     scanf("%d", &num);
     while (tl < tf && num > 0)
     {
@@ -20,27 +20,26 @@ int main()
 
         if (tl < tf)
         {
-            printf("Digite o %do. numero:\n", tl+1);
+            printf("Digite o %do. numero: (0 para finalizar)\n", tl+1);
             scanf("%d", &num);  
         }
     }
     
     //Inserção do elemento no vetor
+    printf("Digite um elemento para inserir:\n");
+    scanf("%d", &elem);
+
     pos = 0;
-    while (pos < tl && elem != vet[pos]);
+    while (pos < tl && elem > vet[pos])
         pos++;
     
     for (i = tl; i > pos; i++)
-        vet[i] = vet[i + 1];
+        vet[i] = vet[i - 1];
     vet[pos] = elem;
     tl++;
-    if (tl < tf)
-    {
-        printf("Digite o %do. numero:\n");
-        scanf("%d", &num);
-    }
 
     for (i = 0; i < tl; i++)
         printf("%d ", vet[i]);
+    
     return 0;
 }
