@@ -22,12 +22,12 @@ int main()
 
         for (l = 0; l < TFA; l++)
         {
-            printf("Digite o estoque do %do produto no armazém %d: ", c + 1, l + 1);
+            printf("Digite o estoque do %do produto no armazï¿½m %d: ", c + 1, l + 1);
             scanf("%d", &Estoque[l][c]);
         }
     }
 
-    // Cálculo total por armazém
+    // Cï¿½lculo total por armazï¿½m
     for (l = 0; l < TFA; l++)
     {
         Total_Armazem = 0;
@@ -44,13 +44,13 @@ int main()
             Menor_Estoque = Total_Armazem;
             Armazem_Menor_Estoque = l + 1;
         }
-        printf("\nEstoque do armazém %d: [%d]", l + 1, Total_Armazem);
+        printf("\nEstoque do armazï¿½m %d: [%d]", l + 1, Total_Armazem);
     }
 
-    printf("\nArmazém com maior estoque: %d", Armazem_Maior_Estoque);
-    printf("\nArmazém com menor estoque: %d", Armazem_Menor_Estoque);
+    printf("\nArmazem com maior estoque: %d", Armazem_Maior_Estoque);
+    printf("\nArmazem com menor estoque: %d", Armazem_Menor_Estoque);
 
-    // Cálculo total por produto
+    // Cï¿½lculo total por produto
     Maior_Estoque = INT_MIN;
     Menor_Estoque = INT_MAX;
     for (c = 0; c < TFP; c++)
@@ -75,13 +75,13 @@ int main()
     printf("\nProduto com maior estoque: %s", Produto_Maior_Estoque);
     printf("\nProduto com menor estoque: %s", Produto_Menor_Estoque);
 
-    // Cálculo do custo total por armazém
+    // Cï¿½lculo do custo total por armazï¿½m
     for (l = 0; l < TFA; l++)
     {
         Custo_Armazem = 0;
         for (c = 0; c < TFP; c++)
             Custo_Armazem += Custo[c] * Estoque[l][c];
-        printf("\nCusto do armazém %d: [%.2f]", l + 1, Custo_Armazem);
+        printf("\nCusto do armazem %d: [%.2f]", l + 1, Custo_Armazem);
     }
 
     return 0;
