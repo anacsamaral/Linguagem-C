@@ -2,8 +2,8 @@
 #include <string.h>
 #include <limits.h>
 
-#define TFP 3
-#define TFA 3
+#define TFP 10
+#define TFA 5
 
 int main()
 {
