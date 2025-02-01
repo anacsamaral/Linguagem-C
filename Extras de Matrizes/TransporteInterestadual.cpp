@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <limits.h>
 
-#define MAX_CIDADES 3
-#define MAX_PERCURSO 5
+#define MAX_CIDADES 30
+#define MAX_PERCURSO 24
 
 int main() 
 {
