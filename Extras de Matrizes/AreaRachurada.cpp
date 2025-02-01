@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define TF 3 // Tamanho fixo da matriz
+#define TF 12 // Tamanho fixo da matriz
 
 int main() {
     int Matriz[TF][TF], MenorElemento, LinhaMenor, ColunaMenor, SomaElemento, l, c, cont;
@@ -15,7 +15,7 @@ int main() {
         }
     }
 
-    // Exibição da matriz
+    // Exibiï¿½ï¿½o da matriz
     printf("\nMatriz digitada:\n");
     for (l = 0; l < TF; l++) {
         for (c = 0; c < TF; c++) {
@@ -24,13 +24,13 @@ int main() {
         printf("\n");
     }
 
-    // Processamento do item (a) - Área hachurada
+    // Processamento do item (a) - ï¿½rea hachurada
     MenorElemento = Matriz[0][0];
     SomaElemento = 0;
     cont = 0;
 
     for (l = 0; l < TF; l++) {
-        for (c = l; c < TF - l; c++) { // Área hachurada no item (a)
+        for (c = l; c < TF - l; c++) { // ï¿½rea hachurada no item (a)
             SomaElemento += Matriz[l][c];
             cont++;
             if (Matriz[l][c] < MenorElemento) {
@@ -43,18 +43,18 @@ int main() {
 
     MediaElementos = (float)SomaElemento / cont;
     printf("\nITEM (A):\n");
-    printf("Menor elemento da área hachurada: %d\n", MenorElemento);
-    printf("Posição: [%d][%d]\n", LinhaMenor, ColunaMenor);
-    printf("Média dos elementos da área hachurada: %.2f\n", MediaElementos);
+    printf("Menor elemento da ï¿½rea hachurada: %d\n", MenorElemento);
+    printf("Posiï¿½ï¿½o: [%d][%d]\n", LinhaMenor, ColunaMenor);
+    printf("Mï¿½dia dos elementos da ï¿½rea hachurada: %.2f\n", MediaElementos);
 
-    // Processamento do item (b) - Outra área hachurada
+    // Processamento do item (b) - Outra ï¿½rea hachurada
     MenorElemento = Matriz[0][0];
     SomaElemento = 0;
     cont = 0;
 
     for (l = 0; l < TF; l++) {
         for (c = 0; c < TF; c++) {
-            if ((c >= l && c < TF - l) || (c <= l && c >= TF - l - 1)) { // Área hachurada no item (b)
+            if ((c >= l && c < TF - l) || (c <= l && c >= TF - l - 1)) { // ï¿½rea hachurada no item (b)
                 SomaElemento += Matriz[l][c];
                 cont++;
                 if (Matriz[l][c] < MenorElemento) {
@@ -68,9 +68,9 @@ int main() {
 
     MediaElementos = (float)SomaElemento / cont;
     printf("\nITEM (B):\n");
-    printf("Menor elemento da área hachurada: %d\n", MenorElemento);
-    printf("Posição: [%d][%d]\n", LinhaMenor, ColunaMenor);
-    printf("Média dos elementos da área hachurada: %.2f\n", MediaElementos);
+    printf("Menor elemento da ï¿½rea hachurada: %d\n", MenorElemento);
+    printf("Posiï¿½ï¿½o: [%d][%d]\n", LinhaMenor, ColunaMenor);
+    printf("Mï¿½dia dos elementos da ï¿½rea hachurada: %.2f\n", MediaElementos);
 
     return 0;
 }
