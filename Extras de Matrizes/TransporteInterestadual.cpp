@@ -1,60 +1,65 @@
 #include <stdio.h>
+#include <limits.h>
 
 #define MAX_CIDADES 3
-#define MAX_PERCURSO 24
+#define MAX_PERCURSO 5
 
-int main() {
-    int matrizDistancias[MAX_CIDADES][MAX_CIDADES], numCidades, codigoCidades[MAX_PERCURSO], numeroLinha, maiorLinha = 0, menorLinha = 0, maiorDistancia = 0, menorDistancia = __INT_MAX__;
+int main() 
+{
+    int matrizDistancias[MAX_CIDADES][MAX_CIDADES], linha, numCidades, cidadesPercorridas[MAX_PERCURSO], maiorDistancia, menorDistancia, linhaMaiorDistancia, linhaMenorDistancia, i, j, distanciaTotal, origem, destino;
 
-    // Leitura da matriz de distâncias
-    printf("Digite a matriz de distancias (30x30):\n");
-    for (int i = 0; i < MAX_CIDADES; i++) {
-        for (int j = 0; j < MAX_CIDADES; j++) {
+    maiorDistancia = 0;
+    menorDistancia = INT_MAX;
+
+    // a) Leitura da matriz de distancias
+    printf("Insira a matriz de distancias (%dx%d):\n", MAX_CIDADES, MAX_CIDADES);
+    for (i = 0; i < MAX_CIDADES; i++)
+        for (j = 0; j < MAX_CIDADES; j++)
             scanf("%d", &matrizDistancias[i][j]);
-        }
-    }
 
-    // Processamento das linhas
-    printf("\nDigite o número da linha (ou 9999 para terminar): ");
-    scanf("%d", &numeroLinha);
+    printf("\nInsira o numero da linha (9999 para encerrar): ");
+    scanf("%d", &linha);
 
-    while (numeroLinha != 9999) {
-        printf("Digite o número de cidades percorridas (máximo %d): ", MAX_PERCURSO);
+    while (linha != 9999) 
+    {
+        // b) Leitura de uma linha de onibus e calculo da distancia total
+        printf("Insira o numero de cidades percorridas: ");
         scanf("%d", &numCidades);
 
-        printf("Digite os códigos das %d cidades percorridas (entre 1 e %d):\n", numCidades, MAX_CIDADES);
-        for (int i = 0; i < numCidades; i++) {
-            scanf("%d", &codigoCidades[i]);
-        }
+        printf("Insira os codigos das cidades percorridas (0 a %d): ", MAX_CIDADES - 1);
+        for (i = 0; i < numCidades; i++)
+            scanf("%d", &cidadesPercorridas[i]);
 
-        // Cálculo da distância percorrida na linha
-        int distanciaTotal = 0;
-        for (int i = 0; i < numCidades - 1; i++) {
-            int origem = codigoCidades[i] - 1;
-            int destino = codigoCidades[i + 1] - 1;
+        distanciaTotal = 0;
+        for (i = 0; i < numCidades - 1; i++)
+        {
+            origem = cidadesPercorridas[i];
+            destino = cidadesPercorridas[i + 1];
             distanciaTotal += matrizDistancias[origem][destino];
         }
 
-        printf("Distância total percorrida pela linha %d: %d km\n", numeroLinha, distanciaTotal);
+        printf("Distancia total da linha %d: %d km\n", linha, distanciaTotal);
 
-        // Verificação de maior e menor distância
-        if (distanciaTotal > maiorDistancia) {
+        // Atualizacao das linhas de maior e menor distancia
+        if (distanciaTotal > maiorDistancia)
+        {
             maiorDistancia = distanciaTotal;
-            maiorLinha = numeroLinha;
+            linhaMaiorDistancia = linha;
         }
 
-        if (distanciaTotal < menorDistancia) {
+        if (distanciaTotal < menorDistancia)
+        {
             menorDistancia = distanciaTotal;
-            menorLinha = numeroLinha;
+            linhaMenorDistancia = linha;
         }
 
-        printf("\nDigite o número da linha (ou 9999 para terminar): ");
-        scanf("%d", &numeroLinha);
+        printf("\nInsira o numero da linha (9999 para encerrar): ");
+        scanf("%d", &linha);
     }
 
-    // Resultados finais
-    printf("\nLinha com maior distância (%d km): %d\n", maiorDistancia, maiorLinha);
-    printf("Linha com menor distância (%d km): %d\n", menorDistancia, menorLinha);
+    // c) Exibicao das linhas de maior e menor distancia
+    printf("\nLinha com maior distancia: %d (%d km)\n", linhaMaiorDistancia, maiorDistancia);
+    printf("Linha com menor distancia: %d (%d km)\n", linhaMenorDistancia, menorDistancia);
 
     return 0;
 }
