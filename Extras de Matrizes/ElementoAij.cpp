@@ -19,11 +19,11 @@ int main() {
         MenorC = 0;
         for (c = 1; c < TFC; c++)
             if (MatrizA[l][c] < MenorL) {
-                MenorL = MatrizA[l][c]; ana caroline soua doa amaral
+                MenorL = MatrizA[l][c];
                 MenorC = c;
             }
 
-        // Verificar se o menor elemento da linha é o maior na sua coluna
+        // Verificar se o menor elemento da linha ï¿½ o maior na sua coluna
         MaiorC = MenorL;
         for (OutraL = 0; OutraL < TFL; OutraL++)
             if (MatrizA[OutraL][MenorC] > MaiorC)
@@ -31,14 +31,14 @@ int main() {
 
         // Se o menor da linha for o maior da coluna, temos um ponto de sela
         if (MaiorC == MenorL) {
-            printf("O ponto de sela da matriz é o número %d e está na linha %d e coluna %d.\n",
+            printf("O ponto de sela da matriz ï¿½ o nï¿½mero %d e estï¿½ na linha %d e coluna %d.\n",
                    MenorL, l + 1, MenorC + 1);
             PontoDeSela = 1;
         }
     }
 
     if (!PontoDeSela)
-        printf("A matriz não possui ponto de sela.\n");
+        printf("A matriz nï¿½o possui ponto de sela.\n");
 
     return 0;
 }
